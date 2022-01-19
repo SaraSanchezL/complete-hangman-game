@@ -1,11 +1,11 @@
 import '../styles/App.scss';
-import '../styles/core/reset.scss'
+import '../styles/core/reset.scss';
 import { useEffect, useState } from 'react';
 import callToApi from '../services/api';
-import Header from './Header'
+import Header from './Header';
 import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
-import ErrorLetters from './ErrorLetters ';
+import ErrorLetters from './ErrorLetters';
 
 function App() {
   const [lastLetter, setLastLetter] = useState('');
@@ -39,24 +39,20 @@ function App() {
     }
   };
 
-
   const numberOfErrors = userLetters.filter(
     (letter) => !word.includes(letter)
   ).length;
 
   return (
     <div className="page">
-      
-      <Header/>
+      <Header />
 
       <main className="main">
         <section>
-
           <SolutionLetters word={word} userLetters={userLetters} />
 
           <ErrorLetters word={word} userLetters={userLetters} />
-         
-          
+
           <form className="form">
             <label className="title" htmlFor="last-letter">
               Escribe una letra:
@@ -74,8 +70,7 @@ function App() {
           </form>
         </section>
 
-        <Dummy number={numberOfErrors}/>
-
+        <Dummy number={numberOfErrors} />
       </main>
     </div>
   );
