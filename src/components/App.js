@@ -6,41 +6,57 @@ import Header from './Header';
 import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
 import ErrorLetters from './ErrorLetters';
+import Form from './Form';
 
 function App() {
+  // state
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
 
+  // api
   useEffect(() => {
     callToApi().then((response) => {
-      setWord(response);
+      setWord(response.toLocaleLowerCase());
     });
   }, []);
 
-  const handleInput = (event) => {
-    let inputValue = event.target.value;
-    setLastLetter(inputValue);
+  // remove accents except ñ: https://es.stackoverflow.com/a/62032
+  const removeDiacriticalMarks = (text) =>
+    text
+      .normalize('NFD')
+      .replace(
+        /([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,
+        '$1'
+      )
+      .normalize();
 
-    if (inputValue) {
-      inputValue = event.target.value
-        .toLocaleLowerCase()
-        .match('^[A-zÁ-úÄ-üñÑ]?$'); //^[a-zA-ZñÑ]?$
+  // events
 
-      if (inputValue) {
+  const handleInput = (value) => {
+    setLastLetter(value);
+
+    if (value) {
+      const matchedValue = value.toLocaleLowerCase().match('^[A-zÁ-úÄ-üñÑ]?$');
+
+      if (matchedValue) {
+        const cleanedValue = removeDiacriticalMarks(matchedValue[0]);
+
         const foundLetter = userLetters.find(
-          (letter) => letter === inputValue[0]
+          (letter) => letter === cleanedValue
         );
 
         if (!foundLetter) {
-          setUserLetters([...userLetters, inputValue[0]]);
+          setUserLetters([...userLetters, cleanedValue]);
         }
       }
     }
   };
 
+  // render helpers
+
   const numberOfErrors = userLetters.filter(
-    (letter) => !word.includes(letter)
+    (letter) => !removeDiacriticalMarks(word).includes(letter)
   ).length;
 
   return (
@@ -49,25 +65,22 @@ function App() {
 
       <main className="main">
         <section>
-          <SolutionLetters word={word} userLetters={userLetters} />
+          <SolutionLetters
+            word={word}
+            userLetters={userLetters}
+            removeDiacriticalMarks={removeDiacriticalMarks}
+          />
 
-          <ErrorLetters word={word} userLetters={userLetters} />
+          <ErrorLetters
+            word={word}
+            userLetters={userLetters}
+            removeDiacriticalMarks={removeDiacriticalMarks}
+          />
 
-          <form className="form">
-            <label className="title" htmlFor="last-letter">
-              Escribe una letra:
-            </label>
-            <input
-              autoComplete="off"
-              className="form__input"
-              maxLength="1"
-              type="text"
-              name="last-letter"
-              id="last-letter"
-              value={lastLetter ? lastLetter : ''}
-              onChange={handleInput}
-            />
-          </form>
+          <Form
+            handleInputChange={handleInput}
+            inputValue={lastLetter ? lastLetter : ''}
+          />
         </section>
 
         <Dummy number={numberOfErrors} />

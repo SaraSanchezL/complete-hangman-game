@@ -18,7 +18,7 @@ Módulo 3: React
 - [x] Ejercicio: componentizar el muñeco
 - [x] Ejercicio: componentizar la solución
 - [x] Ejercicio: componentizar las letras falladas
-- [ ] Ejercicio: componentizar el formulario
+- [x] Ejercicio: componentizar el formulario
 - [ ] Ejercicio: instalar y configurar React Router DOM
 - [ ] Ejercicio: crear el menú
 - [ ] Ejercicio: crear las páginas estáticas
