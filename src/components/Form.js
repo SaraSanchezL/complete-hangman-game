@@ -1,3 +1,5 @@
+import '../styles/components/Form.scss';
+
 const Form = (props) => {
   const handleInputValue = (event) => {
     props.handleInputChange(event.currentTarget.value);

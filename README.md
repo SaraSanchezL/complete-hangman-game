@@ -19,9 +19,9 @@ Módulo 3: React
 - [x] Ejercicio: componentizar la solución
 - [x] Ejercicio: componentizar las letras falladas
 - [x] Ejercicio: componentizar el formulario
-- [ ] Ejercicio: instalar y configurar React Router DOM
-- [ ] Ejercicio: crear el menú
-- [ ] Ejercicio: crear las páginas estáticas
+- [x] Ejercicio: instalar y configurar React Router DOM
+- [x] Ejercicio: crear el menú
+- [x] Ejercicio: crear las páginas estáticas
 - [x] Ejercicio: publicar en GitHub Pages
 - [ ] Ejercicio: cambiar la palabra a adivinar
 - [ ] Ejercicio: añadir un loader al arrancar
