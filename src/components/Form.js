@@ -2,6 +2,7 @@ import '../styles/components/Form.scss';
 
 const Form = (props) => {
   const handleInputValue = (event) => {
+    event.preventDefault();
     props.handleInputChange(event.currentTarget.value);
   };
 

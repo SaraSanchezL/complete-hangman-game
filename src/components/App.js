@@ -66,9 +66,9 @@ function App() {
     <div className="page">
       <Header />
       <main className="main">
-        <Switch>
-          <Route exact path="/">
-            <section>
+        <section className="main__section">
+          <Switch>
+            <Route path="/" exact>
               <SolutionLetters
                 word={word}
                 userLetters={userLetters}
@@ -85,16 +85,16 @@ function App() {
                 handleInputChange={handleInput}
                 inputValue={lastLetter ? lastLetter : ''}
               />
-            </section>
-          </Route>
+            </Route>
 
-          <Route path="/instructions">
-            <Instructions />
-          </Route>
-          <Route path="/options">
-            <Options />
-          </Route>
-        </Switch>
+            <Route path="/instructions">
+              <Instructions />
+            </Route>
+            <Route path="/options">
+              <Options />
+            </Route>
+          </Switch>
+        </section>
 
         <Dummy number={numberOfErrors} />
       </main>

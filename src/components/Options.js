@@ -1,7 +1,11 @@
+import '../styles/components/Options.scss';
+
 const Options = () => {
   return (
-   <p>Estas son las opciones del juego</p> 
-  )
-}
+    <section className="options">
+      <p>Estas son las opciones del juego</p>
+    </section>
+  );
+};
 
 export default Options;
