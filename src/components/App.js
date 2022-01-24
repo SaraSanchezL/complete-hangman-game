@@ -56,6 +56,12 @@ function App() {
     }
   };
 
+  const handleInputWord = (value) => {
+    setWord(value);
+    setUserLetters([]);
+    setLastLetter('');
+  }
+
   // render helpers
 
   const numberOfErrors = userLetters.filter(
@@ -91,7 +97,7 @@ function App() {
               <Instructions />
             </Route>
             <Route path="/options">
-              <Options />
+              <Options handleInput={handleInputWord} value={word} />
             </Route>
           </Switch>
         </section>
