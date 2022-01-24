@@ -23,11 +23,11 @@ Módulo 3: React
 - [x] Ejercicio: crear el menú
 - [x] Ejercicio: crear las páginas estáticas
 - [x] Ejercicio: publicar en GitHub Pages
-- [ ] Ejercicio: cambiar la palabra a adivinar
-- [ ] Ejercicio: añadir un loader al arrancar
+- [x] Ejercicio: cambiar la palabra a adivinar
+- [x] Ejercicio: añadir un loader al arrancar
 - [ ] Ejercicio: añadir las defaultProps
 - [ ] Ejercicio: añadir las PropTypes
-- [ ] Ejercicio: hacer destructuring de las props
+- [x] Ejercicio: hacer destructuring de las props
 - [ ] Ejercicio: ES6 katas
 
 ---

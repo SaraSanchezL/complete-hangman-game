@@ -1,10 +1,11 @@
 import '../styles/components/Letters.scss';
 
-const SolutionLetters = (props) => {
+const SolutionLetters = ({ word, userLetters, removeDiacriticalMarks }) => {
+
   const renderSolutionLetters = () => {
-    const wordLetters = props.word.split('');
+    const wordLetters = word.split('');
     return wordLetters.map((letter, index) => {
-      if (props.userLetters.includes(props.removeDiacriticalMarks(letter))) {
+      if (userLetters.includes(removeDiacriticalMarks(letter))) {
         return (
           <li key={index} className="letter">
             {letter}
