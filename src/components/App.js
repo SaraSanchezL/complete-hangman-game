@@ -10,16 +10,22 @@ import Footer from './Footer';
 import { Route, Switch } from 'react-router-dom';
 import Instructions from './Instructions';
 import Options from './Options';
+import Loading from './Loading';
 
 function App() {
   // state
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  
 
   // api
   useEffect(() => {
+    setIsLoading(true);
     callToApi().then((response) => {
+      setIsLoading(false)
       setWord(response.toLocaleLowerCase());
     });
   }, []);
@@ -71,6 +77,9 @@ function App() {
   return (
     <div className="page">
       <Header />
+
+      <Loading loading={isLoading} />
+      
       <main className="main">
         <section className="main__section">
           <Switch>
