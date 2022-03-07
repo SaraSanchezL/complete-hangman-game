@@ -1,42 +1,41 @@
-import '../styles/App.scss';
-import { useEffect, useState } from 'react';
-import callToApi from '../services/api';
-import Header from './Header';
-import Dummy from './Dummy';
-import SolutionLetters from './SolutionLetters';
-import ErrorLetters from './ErrorLetters';
-import Form from './Form';
-import Footer from './Footer';
-import { Route, Switch } from 'react-router-dom';
-import Instructions from './Instructions';
-import Options from './Options';
-import Loading from './Loading';
+import "../styles/App.scss";
+import { /*useEffect, */ useState } from "react";
+// import callToApi from '../services/api';
+import Header from "./Header";
+import Dummy from "./Dummy";
+import SolutionLetters from "./SolutionLetters";
+import ErrorLetters from "./ErrorLetters";
+import Form from "./Form";
+import Footer from "./Footer";
+import { Route, Switch } from "react-router-dom";
+import Instructions from "./Instructions";
+import Options from "./Options";
+// import Loading from "./Loading";
 
 function App() {
   // state
-  const [lastLetter, setLastLetter] = useState('');
-  const [word, setWord] = useState('');
+  const [lastLetter, setLastLetter] = useState("");
+  const [word, setWord] = useState("");
   const [userLetters, setUserLetters] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
-  
+  // api (no disponible)
 
-  // api
-  useEffect(() => {
-    setIsLoading(true);
-    callToApi().then((response) => {
-      setIsLoading(false)
-      setWord(response.toLocaleLowerCase());
-    });
-  }, []);
+  // useEffect(() => {
+  //   setIsLoading(true);
+  //   callToApi().then((response) => {
+  //     setIsLoading(false)
+  //     setWord(response.toLocaleLowerCase());
+  //   });
+  // }, []);
 
   // remove accents except ñ: https://es.stackoverflow.com/a/62032
   const removeDiacriticalMarks = (text) =>
     text
-      .normalize('NFD')
+      .normalize("NFD")
       .replace(
         /([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,
-        '$1'
+        "$1"
       )
       .normalize();
 
@@ -46,7 +45,7 @@ function App() {
     setLastLetter(value);
 
     if (value) {
-      const matchedValue = value.toLocaleLowerCase().match('^[A-zÁ-úÄ-üñÑ]?$');
+      const matchedValue = value.toLocaleLowerCase().match("^[A-zÁ-úÄ-üñÑ]?$");
 
       if (matchedValue) {
         const cleanedValue = removeDiacriticalMarks(matchedValue[0]);
@@ -65,8 +64,8 @@ function App() {
   const handleInputWord = (value) => {
     setWord(value);
     setUserLetters([]);
-    setLastLetter('');
-  }
+    setLastLetter("");
+  };
 
   // render helpers
 
@@ -78,12 +77,13 @@ function App() {
     <div className="page">
       <Header />
 
-      <Loading loading={isLoading} />
-      
+      {/* <Loading loading={isLoading} /> */}
+
       <main className="main">
         <section className="main__section">
           <Switch>
             <Route path="/" exact>
+
               <SolutionLetters
                 word={word}
                 userLetters={userLetters}
@@ -98,7 +98,7 @@ function App() {
 
               <Form
                 handleInputChange={handleInput}
-                inputValue={lastLetter ? lastLetter : ''}
+                inputValue={lastLetter ? lastLetter : ""}
               />
             </Route>
 
