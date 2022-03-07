@@ -1,6 +1,6 @@
-Módulo 3: React
+React
 
-# Ejercicio de pair programming
+# Hangman Game.  
 
 ## Pestaña ¿Cómo se Juega? para ver opciones de juego.
 
@@ -8,7 +8,7 @@ Módulo 3: React
 - Modo Un Jugador (Temporalmente no disponible, servidor no operativo).
 
 ### Pareja 4 / Sprint 2
-
+Ejercicio de pair programming.
 - [Sara Sánchez](https://github.com/SaraSanchezL)
 - [Mara Rocha](https://github.com/mararochafernandez)
 
