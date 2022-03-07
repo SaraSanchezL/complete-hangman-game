@@ -1,18 +1,27 @@
-React
+Made With React 🌟
 
-# Hangman Game.  
+# Hangman Game (Now only Multiplayer Version!) 🎮 .  
 
-## Pestaña ¿Cómo se Juega? para ver opciones de juego.
+## Visita la pestaña ¿Cómo se Juega? para ver opciones de juego.
 
-- Modo Multijugador.
-- Modo Un Jugador (Temporalmente no disponible, servidor no operativo).
+- Modo Multijugador -> Un jugador escribe una palabra a adivinar, un segundo jugador trata de descubrir qué palabra es. 
+- Modo Un Jugador (Temporalmente no disponible, API no operativa) -> Recibe una palabra aleatoria de una API, y el jugador trata de adivinarla.
 
-### Pareja 4 / Sprint 2
+### Pair 4 / Sprint 2
 Ejercicio de pair programming.
 - [Sara Sánchez](https://github.com/SaraSanchezL)
 - [Mara Rocha](https://github.com/mararochafernandez)
 
-## El juego del ahorcado
+## Descripción de las principales funciones
+Se realiza juego del ahorcado, se entrega base de HTML y SCSS para, partiendo de ahí, meter funcionalidades con React. 
+  - Se realiza la petición a la API, se guarda la respuesta en variable estado. 
+  - Se crea evento para las letras que introduce el usuario. En caso de fallar se pintan en letras falladas y las líneas del muñeco aumentan. En caso de acertar se pintan en la solución. Todo ello guardandolas en una variable estado y comparando con el paso anterior. 
+  - Se crean componentes para la cabecera, muñeco, solución, letras falladas y formulario con las letras del usuario.
+  - Se utilizan rutas para las distintas secciones de la aplicación. Se crea el menú y las páginas estáticas. 
+  - Se añade un modo de juego que permite establecer la palabra a adivinar (modo multijugador).  
+  - Se añade un Loader que se activa cuando espera la respuesta a la petición. 
+
+### Check de Funciones
 
 - [x] Crear repositorio.
 - [x] Elegir con qué ejercicio continuar o mezclar ambos
