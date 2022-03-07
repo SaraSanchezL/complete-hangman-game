@@ -83,19 +83,16 @@ function App() {
         <section className="main__section">
           <Switch>
             <Route path="/" exact>
-
               <SolutionLetters
                 word={word}
                 userLetters={userLetters}
                 removeDiacriticalMarks={removeDiacriticalMarks}
               />
-
               <ErrorLetters
                 word={word}
                 userLetters={userLetters}
                 removeDiacriticalMarks={removeDiacriticalMarks}
               />
-
               <Form
                 handleInputChange={handleInput}
                 inputValue={lastLetter ? lastLetter : ""}
