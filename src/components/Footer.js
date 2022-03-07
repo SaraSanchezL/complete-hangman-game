@@ -1,4 +1,4 @@
-import '../styles/components/Footer.scss';
+import '../styles/components/footer.scss';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
@@ -18,7 +18,7 @@ const Footer = () => {
           </li>
           <li className="footer__menu-item">
             <NavLink className="footer__menu-link" to="/options">
-              Más opciones
+              Palabra a Adivinar
             </NavLink>
           </li>
         </ul>

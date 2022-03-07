@@ -1,4 +1,4 @@
-import '../styles/components/Form.scss';
+import '../styles/components/form.scss';
 
 const Form = (props) => {
   const handleInputValue = (event) => {

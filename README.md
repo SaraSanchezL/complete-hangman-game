@@ -2,16 +2,19 @@ Módulo 3: React
 
 # Ejercicio de pair programming
 
-**URL del ejercicio: [Hangman Game](http://mararochafernandez.github.io/promo-o-module-3-pair-4-sprint-2-hangman-game/)**
+## Pestaña ¿Cómo se Juega? para ver opciones de juego.
 
-## Pareja 4 / Sprint 2
+- Modo Multijugador.
+- Modo Un Jugador (Temporalmente no disponible, servidor no operativo).
+
+### Pareja 4 / Sprint 2
 
 - [Sara Sánchez](https://github.com/SaraSanchezL)
 - [Mara Rocha](https://github.com/mararochafernandez)
 
 ## El juego del ahorcado
 
-- [x] Crear repositorio: `promo-o-module-3-pair-4-sprint-2-hangman-game`
+- [x] Crear repositorio.
 - [x] Elegir con qué ejercicio continuar o mezclar ambos
 - [x] Subir el código al repositorio
 - [x] Ejercicio: componentizar la cabecera

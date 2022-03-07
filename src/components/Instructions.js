@@ -1,19 +1,13 @@
-import '../styles/components/Instructions.scss';
+import '../styles/components/instructions.scss';
 
 const Instructions = () => {
   return (
     <section className="instructions">
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-        provident nisi voluptatem est nostrum optio perferendis doloremque,
-        delectus at, assumenda suscipit sit odio ipsum error consequatur numquam
-        vero impedit nulla?
+        Modo Multijugador: un jugador en la pestaña 'Palabra a Adivinar' escribirá la palabra que un segundo jugador adivinará en la pantalla principal 'A Jugar'.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-        animi voluptatem quis impedit amet in dicta soluta explicabo, fugit
-        magni mollitia, pariatur eos, repellendus aut esse recusandae minima eum
-        eaque.
+        Modo Un Jugador: se obtendrá una palabra aleatoria de un servidor para adivinar en la pantalla principal 'A Jugar'. (Temporalmente no disponible).
       </p>
     </section>
   );

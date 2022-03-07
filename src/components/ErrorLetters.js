@@ -1,4 +1,4 @@
-import '../styles/components/Letters.scss';
+import '../styles/components/letters.scss';
 
 const ErrorLetters = (props) => {
   const renderErrorLetters = () =>
