@@ -1,6 +1,6 @@
 import "../styles/App.scss";
-import { /*useEffect, */ useState } from "react";
-// import callToApi from '../services/api';
+import { useEffect, useState } from "react";
+import callToApi from '../services/api';
 import Header from "./Header";
 import Dummy from "./Dummy";
 import SolutionLetters from "./SolutionLetters";
@@ -10,24 +10,24 @@ import Footer from "./Footer";
 import { Route, Switch } from "react-router-dom";
 import Instructions from "./Instructions";
 import Options from "./Options";
-// import Loading from "./Loading";
+import Loading from "./Loading";
 
 function App() {
   // state
   const [lastLetter, setLastLetter] = useState("");
   const [word, setWord] = useState("");
   const [userLetters, setUserLetters] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // api (no disponible)
+  // api
 
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   callToApi().then((response) => {
-  //     setIsLoading(false)
-  //     setWord(response.toLocaleLowerCase());
-  //   });
-  // }, []);
+  useEffect(() => {
+    setIsLoading(true);
+    callToApi().then((response) => {
+      setIsLoading(false)
+      setWord(response.toLocaleLowerCase());
+    });
+  }, []);
 
   // remove accents except ñ: https://es.stackoverflow.com/a/62032
   const removeDiacriticalMarks = (text) =>
@@ -77,7 +77,7 @@ function App() {
     <div className="page">
       <Header />
 
-      {/* <Loading loading={isLoading} /> */}
+      <Loading loading={isLoading} />
 
       <main className="main">
         <section className="main__section">
